@@ -14,8 +14,11 @@ jobs:
       - name: Setup Java JDK
         uses: actions/setup-java@v2.4.0
         with:
-           distribution: 'temurin'
-           java-version: '17'
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
 
       - name: Unit tests
         run: ./gradlew test
